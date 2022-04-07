@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -c $CFILE > comp.s
+gcc -Wa $CFILE > comp.s
