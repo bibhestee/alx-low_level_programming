@@ -1,13 +1,12 @@
 #include <stdio.h>
 /**
-  * main 
+  * main - entry point where the program start
   *
   * Return: Always (Success)
   */
 int main(void)
 {
 	char c;
-
 	for (c = 'a'; c <= 'z'; c++)
 	{
 		if (c != 'e' && c != 'q')
@@ -17,7 +16,6 @@ int main(void)
 	}
 
 	putchar('\n');
-
 	return (0);
 
 }
