@@ -1,10 +1,10 @@
 #include <stdio.h>
-
 /**
  * main - entry point where the program start
  *
  * Return: Always (Success)
  */
+
 int main(void)
 {
 	char c;
