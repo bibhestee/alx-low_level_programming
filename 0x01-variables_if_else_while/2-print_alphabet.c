@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main- entry point
+ * main- entry point where the program start
  *
  * Return: Always (Success)
  */
@@ -10,7 +10,6 @@ int main(void)
 
 	for (c = 'a'; c <= 'z'; c++)
 		putchar(c);
-
 	putchar('\n');
 	return (0);
 
