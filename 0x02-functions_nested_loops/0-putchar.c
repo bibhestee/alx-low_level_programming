@@ -2,7 +2,7 @@
 /**
 * main - entry point: Its the start point of the program.
 * return - return null
-* void - return the main function void
+* main(void) - return the main function void
 */
 int main(void)
 {
