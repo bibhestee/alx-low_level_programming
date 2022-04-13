@@ -1,28 +1,25 @@
 #include "main.h"
-/*
-* main.h - Includes the functions and prototypes
-* print_alphabet_x10 : prints alphabets x10
-* return 0
-*/
+
+/**
+ * print_alphabet_x10 - prints alphabet 10 times
+ * Return:void
+ */
+
 void print_alphabet_x10(void)
 {
-/* Declares variable i for repeating the task x10*/
-	int i;
-	for(i = 1;i <= 10; i++)
-{
-/* For each iteration- print all alphabets followed by newline*/
-	char c = 'a';
-	while( c <= 'z' )
-	{
-		_putchar(c);
-		c++;
-/* Return value of variable c and repeat the process till c = z*/
-		return c;
-	}
-	_putchar("\n");
-/* Return value of variable i and repeat the process till i = 10*/
-	return i;
-}
-	return (0);
-}
+	char c;
+	int i = 0;
 
+	while (i < 10)
+	{
+		c = 'a';
+		while (c <= 'z')
+		{
+			_putchar(c);
+			c++;
+		}
+		_putchar('\n');
+		i++;
+	}
+
+}
