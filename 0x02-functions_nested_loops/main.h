@@ -6,8 +6,9 @@ void _putchar(char)
 	printf("%s", a);
 	return 0;
 }
-void print_alphabet(void)
+void print_alphabet()
 {
+	letter = ();
 	while (letter <= 'z')
 	{
 	_putchar(letter\n);
