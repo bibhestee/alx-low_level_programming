@@ -6,3 +6,12 @@ void _putchar(char)
 	printf("%s", a);
 	return 0;
 }
+void print_alphabet(void)
+{
+	while (letter <= 'z')
+	{
+	_putchar(letter);
+	letter++;
+	return 0;
+	}
+}
