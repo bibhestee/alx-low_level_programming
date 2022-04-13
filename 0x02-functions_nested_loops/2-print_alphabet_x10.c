@@ -1,13 +1,13 @@
 #include "main.h"
 /*
 * main.h - Includes the functions and prototypes
+* print_alphabet_x10 : prints alphabets x10
 * return 0
 */
-int main(void)
+void print_alphabet_x10(void)
 {
 /* Declares variable i for repeating the task x10*/
 	int i;
-/
 	for(i = 1;i <= 10; i++)
 {
 /* For each iteration- print all alphabets followed by newline*/
