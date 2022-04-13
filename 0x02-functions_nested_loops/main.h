@@ -1,8 +1,10 @@
 #include <stdio.h>
-//All the functions declarations are listed in this file.
-void _putchar(char)
+/*
+*All the functions declarations are listed in this file.
+*/
+int _putchar(char a)
 {
-	char a;
+	int a = ();
 	printf("%s", a);
 	return 0;
 }
