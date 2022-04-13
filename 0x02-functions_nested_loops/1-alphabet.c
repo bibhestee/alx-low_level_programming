@@ -7,6 +7,7 @@
 */
 int main(void)
 {
-	print_alphabet(char 'a');
+	char alphabet = 'a';
+	print_alphabet(a);
 	return (0);
 }
