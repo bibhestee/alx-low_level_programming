@@ -1,11 +1,11 @@
 #include "main.h"
 /**
-* main - check the code
 * mul - multiplies two integers
-* a - int to be multiplied by b
-* b - int to be multiplied by a
-* return - Always 0
+* 'a' : to be multiplied by b
+* 'b' : to be multiplied by a
+* Return: mul(the product)
 */
+
 
 int mul(int a, int b)
 {
