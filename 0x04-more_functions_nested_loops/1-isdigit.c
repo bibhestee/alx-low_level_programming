@@ -1,12 +1,11 @@
 #include "main.h"
-/*
- * main.h - Its the main library which contains the isdigit functions
- *_isdigit() - returns 1 if c contains a digit
- *@c : int to be checked
- * return - Always zero
+
+/**
+ * _isdigit - checks for a digit (0 through 9)
+ * @c: int to be checked
+ * Return: 1 if c is a digit, 0 otherwise
  */
 int _isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
-
