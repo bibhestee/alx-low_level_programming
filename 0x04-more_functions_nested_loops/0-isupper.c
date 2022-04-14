@@ -1,8 +1,9 @@
 #include "main.h"
-/*
- * main.h - Its the main library which contains the isupper functions
- * _isupper - returns c if its upper or zero is not
- * return - Always zero
+
+/**
+ * _isupper - checks for uppercase character
+ * @c: the character to be checked
+ * Return: 1 if c is uppercase, 0 otherwise
  */
 int _isupper(int c)
 {
