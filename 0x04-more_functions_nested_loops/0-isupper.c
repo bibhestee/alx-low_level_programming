@@ -4,9 +4,7 @@
  * _isupper - returns c if its upper or zero is not
  * return - Always zero
  */
-
-
-int _isupper(int c);
+int _isupper(int c)
 {
 	if (c >= 65 && c <= 90)
 	{
