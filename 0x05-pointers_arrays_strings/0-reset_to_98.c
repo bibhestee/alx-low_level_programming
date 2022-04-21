@@ -1,7 +1,7 @@
 #include "main.h"
 /**
 * reset_to_98 - reset argument to 98
-* @n - variable that holds the argument(pointer)
+* @n - pointer
 * return - Returns 0
 */
 
