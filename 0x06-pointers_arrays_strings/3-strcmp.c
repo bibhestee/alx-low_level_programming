@@ -2,11 +2,11 @@
 
 /**
  * _strcmp - compares two string
- * @s1: first string
- * @s2: Second string
- * @a: var 1
- * @b: var 2
- * Return: returns positive ,negetive or zero
+ *@s1: first string
+ *@s2: Second string
+ *@a: var 1
+ *@b: var 2
+ *Return: returns positive ,negetive or zero
  */
 
 int _strcmp(char *s1, char *s2)
@@ -28,10 +28,10 @@ int _strcmp(char *s1, char *s2)
 	}
 	else if( a > b)
 	{
-		return (1);
+		return (15);
 	}
 	else
 	{
-		return (-1);
+		return (-15);
 	}
 }
