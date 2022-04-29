@@ -3,6 +3,7 @@
 /**
  * _puts_recursion - print a string with recursion
  * *s: pointer
+ *@s: variable 1
  */
 
 void _puts_recursion(char *s)
