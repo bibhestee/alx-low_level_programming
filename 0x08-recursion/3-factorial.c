@@ -1,4 +1,4 @@
-#include "main.h 
+#include "main.h"
 
 /**
  * factorial - prints a factorial using a recursion

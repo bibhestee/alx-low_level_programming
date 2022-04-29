@@ -31,4 +31,3 @@ int _sqrt_recursion(int n)
 	return (sqrt_a(n, 0));
 }
 
-xrrbjx
