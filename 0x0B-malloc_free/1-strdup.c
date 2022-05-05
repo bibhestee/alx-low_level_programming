@@ -15,7 +15,7 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	c0 = str;
+	*c0 = *str;
 	return (c0);
 }
 
