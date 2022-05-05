@@ -16,6 +16,12 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 	*c0 = *str;
+	while (*c0 != '\0')
+	{
+		int i = 0;
+		*(c0 + i);
+		i++;
+	}
 	return (c0);
 }
 
