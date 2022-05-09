@@ -2,7 +2,10 @@
 #include <stdlib.h>
 
 /**
- *
+ *string_nconcat - concatenate two string
+ *@s1: variable 1
+ *@s2: variable 2
+ *Return: return null or concatenated string
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
