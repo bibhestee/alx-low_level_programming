@@ -10,11 +10,7 @@
 
 void *malloc_checked(unsigned int b)
 {
-<<<<<<< HEAD
-	int *ptr = malloc(b);
-=======
 	void *ptr = malloc(b);
->>>>>>> a844fbf94f3b6d474478f83f70dc0274a18d9e64
 
 	if (ptr == NULL)
 	{
