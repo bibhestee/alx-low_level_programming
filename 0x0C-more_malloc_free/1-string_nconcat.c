@@ -1,26 +1,42 @@
-#include "main.h"
+0x0C-more_malloc_free#include "main.h"
 #include <stdlib.h>
 
 /**
  *string_nconcat - concatenate two string
- *@s1: variable 1
- *@s2: variable 2
+ *@s1: first string to copy
+ *@s2: second string to copy
+ *@n: number of byte to concatenate with s1
  *Return: return null or concatenated string
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *ptr_m = malloc(sizeof(s1) + sizeof(s2));
+	unsigned int i, j, k;
+	char *s;
 
-	if (ptr_m == NULL)
+	if (s1 == NULL)
+		i = 0;
+	else
 	{
+		for (i = 0; s1[i]; i++)
+			;
+	}
+	if (s2 == NULL)
+		j = 0;
+	else
+	{
+		for (j = 0; s2[j]; j++)
+			;
+	}
+	if (j > n)
+		j = n;
+	s = malloc(sizeof(char) * (i + j + 1));
+	if (s == NULL)
 		return (NULL);
-	}
-	else if (n >= sizeof(s2))
-	{
-		ptr_m = s1;
-		*ptr_m = *ptr_m + *s2;
-	}
-	ptr_m = s1;
-	return (ptr_m);
+	for (k = 0; k < i; k++)
+		s[k] = s1[k];
+	for (k = 0; k < j; k++)
+		s[k + i] = s2[k];
+	s[i + j] = '\0';
+	return (s);
 }
