@@ -3,26 +3,31 @@
 
 /**
  *array_range - Creates an array of integers using a pointer and malloc
- *@array: array variable
+ *@min: First value
+ *@max: last value
+ *
  *Return: returns pointer(ptr_range) or NULL
  */
 
 int *array_range(int min, int max)
 {
 	int *ptr_range;
-	int array[] = {1, 1, 1};
-	int i;
+	int i, l;
 
-	ptr_range = malloc(sizeof(max) * ((max - min) + 1));
-	if (ptr_range == NULL || min > max)
+	if (min > max)
 	{
 		return (NULL);
 	}
-	for (i = 0;min <= max;i++)
+	l = (max - min) + 1;
+	ptr_range = malloc(sizeof(int) * l);
+
+	if (ptr_range == NULL)
 	{
-		array[i] = min;
-		min++;
+		return (NULL);
 	}
-	ptr_range = array;
+	for (i = 0; i < l; i++, min++)
+	{
+		ptr_range[i] = min;
+	}
 	return (ptr_range);
 }
