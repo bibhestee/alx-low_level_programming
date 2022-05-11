@@ -5,7 +5,7 @@
  * struct dog - create a struct with tag name dog
  * @name: Dog's name
  * @age: Dog's age
- * @owner: Dog owner
+ * @owner:Dog owner
  *
  */
 struct dog
