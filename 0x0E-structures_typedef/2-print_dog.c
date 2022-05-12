@@ -1,6 +1,6 @@
 #include "dog.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * print_dog - print a structure variable with the argument passed
@@ -14,17 +14,17 @@ void print_dog(struct dog *d)
 	{
 		exit(0);
 	}
-	if (d->name != NULL && d->age != NULL && d->owner != NULL)
+	if (d->name != NULL && d->age != 0 && d->owner != NULL)
 	{
 		printf("Name: %s\n", d->name);
-		printf("Age: %d\n", d->age);
-		printf("Owner: %s", d->owner);
+		printf("Age: %f\n", d->age);
+		printf("Owner: %s\n", d->owner);
 	}
 	else if (d->name == NULL)
 	{
 		printf("Name: (nil)\n");
 	}
-	else if (d->age == NULL)
+	else if (d->age == 0)
 	{
 		printf("Age: (nil)\n");
 	}
