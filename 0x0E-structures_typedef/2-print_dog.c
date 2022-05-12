@@ -12,8 +12,7 @@ void print_dog(struct dog *d)
 {
 	if (d == NULL)
 	{
-		free(d);
-		exit(0);
+		return;
 	}
 	if (d->name == NULL)
 	{
