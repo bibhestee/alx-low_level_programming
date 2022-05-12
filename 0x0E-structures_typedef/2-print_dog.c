@@ -21,10 +21,6 @@ void print_dog(struct dog *d)
 	}
 	else
 	{
-		for (i = 0; name[i] != '\0'; i++)
-		{
-			d->name[i] = name[i];
-		}
 		printf("Name: %s\n", d->name);
 	}
 	if (d->age == 0)
@@ -41,10 +37,6 @@ void print_dog(struct dog *d)
 	}
 	else
 	{
-		for (i = 0; owner[i] != '\0'; i++)
-		{
-			d->owner[i] = owner[i];
-		}
 		printf("Owner: %s\n", d->owner);
 	}
 }
