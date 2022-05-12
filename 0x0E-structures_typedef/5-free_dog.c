@@ -8,36 +8,5 @@
 
 void free_dog(dog_t *d)
 {
-	if (d->name != NULL)
-	{
-		free(d->name);
-	}
-	else
-	{
-		exit(0);
-	}
-	if (d->owner != NULL)
-	{
-		free(d->owner);
-	}
-	else
-	{
-		exit(0);
-	}
-	if (d->age > 0)
-	{
-		d->age = 0;
-	}
-	else
-	{
-		exit(0);
-	}
-	if (d != NULL)
-	{
-		d = malloc(sizeof(dog_t) * 0);
-	}
-	else
-	{
-		exit(0);
-	}
+	free(d);
 }
