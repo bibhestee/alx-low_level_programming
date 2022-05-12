@@ -17,13 +17,21 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (ptr_new_dog == NULL)
 	{
+		free(ptr_new_dog);
 		return (NULL);
 	}
 	else
 	{
-		ptr_new_dog->name = name;
-		ptr_new_dog->age = age;
-		ptr_new_dog->owner = owner;
-		return (ptr_new_dog);
+		if (name != NULL && age > 0 && owner != NULL)
+		{
+			ptr_new_dog->name = name;
+			ptr_new_dog->age = age;
+			ptr_new_dog->owner = owner;
+			return (ptr_new_dog);
+		}
+		else
+		{
+			return (NULL);
+		}
 	}
 }
