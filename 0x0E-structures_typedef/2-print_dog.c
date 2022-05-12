@@ -1,27 +1,39 @@
 #include "dog.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
- * print_dog - Create a structure variable with the argument passed
- * and returns nothing(void)
- * @name: dog's name
- * @age: dog's age
- * @owner: dog's owner
+ * print_dog - print a structure variable with the argument passed
  * @d: argument passed(dog variable)
  *
- * Return: returns nothing
  */
 
 void print_dog(struct dog *d)
 {
-	dog *d_ptr;
-
-	d_ptr = malloc(sizeof(dog));
-	if (d_ptr == NULL)
+	if (d == NULL)
 	{
 		exit(0);
 	}
-	d_ptr->name = d.name;
-	d_ptr->age = d.age;
-	d_ptr->owner = d.owner;
+	if (d->name != NULL && d->age != NULL && d->owner != NULL)
+	{
+		printf("Name: %s\n", d->name);
+		printf("Age: %d\n", d->age);
+		printf("Owner: %s", d->owner);
+	}
+	else if (d->name == NULL)
+	{
+		printf("Name: (nil)\n");
+	}
+	else if (d->age == NULL)
+	{
+		printf("Age: (nil)\n");
+	}
+	else if (d->owner == NULL)
+	{
+		printf("Owner: (nil)");
+	}
+	else
+	{
+		exit(0);
+	}
 }
