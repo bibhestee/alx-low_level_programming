@@ -26,7 +26,7 @@ void free_dog(dog_t *d)
 	}
 	if (d->age > 0)
 	{
-		free(d->age);
+		d->age = 0;
 	}
 	else
 	{
