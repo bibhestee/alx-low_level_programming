@@ -1,10 +1,8 @@
 #include "function_pointers.h"
 
 /**
- * print_name - Gets two arguments
- * an array and a function pointer
- * pass the array as an argument to the function pointer.
- * @name: name array
+ * print_name - Prints name from two arguments
+ * @name: array variable
  * @f: function pointer
  *
  * Return: returns nothing(void)
