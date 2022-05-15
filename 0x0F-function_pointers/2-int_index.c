@@ -1,8 +1,7 @@
 #include "function_pointers.h"
-#include <stdlib.h>
 
 /**
- * int-index - Checks for matches
+ * int_index - Checks for matches
  * @size: size of the array
  * @cmp: function pointer
  * @array: compared array
