@@ -53,7 +53,7 @@ void print_all(const char * const format, ...)
 	int i = 0, j = 0;
 	char *sep = "";
 
-	printTypeStruct printType[] = {
+	printType Struct printType[] = {
 	{ "i", print_int },
 	{ "f", print_float },
 	{ "c", print_char },
@@ -78,9 +78,8 @@ void print_all(const char * const format, ...)
 		}
 		j++;
 	}
-	i++;
+		i++;
 	}
-
-	printf("\n");
 	va_end(list);
+	printf("\n");
 }
