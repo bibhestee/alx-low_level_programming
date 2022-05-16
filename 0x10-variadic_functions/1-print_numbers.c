@@ -1,6 +1,7 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
+#include <stdlib.h>
 
 /**
  * print_numbers - print the number passed as argument
@@ -38,5 +39,5 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	}
 	va_end(ap);
 
-	_putchar('\n');
+	printf('\n');
 }
