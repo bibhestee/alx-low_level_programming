@@ -15,9 +15,16 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	int num;
 
+	/* Get the number of arguments passed and Initialize the list */
 	va_list ap;
 
 	va_start(ap, n);
+
+	/* Check if n = NULL */
+	if (n == 0)
+	{
+		return;
+	}
 
 	for (i = 0; i < n; i++)
 	{
