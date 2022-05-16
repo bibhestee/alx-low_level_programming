@@ -3,7 +3,7 @@
 
 /**
  * sum_them_all - Sum all the passed arguments
- * @n: First parameter before the variable list
+ * @n: First parameter before the variable list.
  *
  * Return: Returns the sum or 0 if n = 0.
  */
