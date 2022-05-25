@@ -12,11 +12,12 @@
 size_t print_list(const list_t *h)
 {
 	size_t count = 0;
+
 	list_t *ptr = NULL;
 
 	ptr = malloc(sizeof(list_t));
 
-	if (ptr == NULL)
+	if (ptr == NULL || h == NULL)
 		return (0);
 
 	ptr->str = h->str;
