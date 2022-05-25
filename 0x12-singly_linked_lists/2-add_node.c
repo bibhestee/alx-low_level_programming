@@ -15,24 +15,30 @@
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *node = NULL;
+	list_t **ptr = head;
 
 	list_t *ptr_node = malloc(sizeof(list_t));
 
 	/* Check if ptr is allocated a memory or not or head is valid or not */
-	if (ptr_node == NULL || head == NULL)
+	if (ptr_node == NULL || ptr == NULL)
 		return (NULL);
 
 	/* assign allocated memory to variable node */
-	node = ptr_node;
+	ptr_node = node;
 
 	/* Assign the address of initial first node to node */
-	node->next = (*head)->next->next;
+	ptr_node->next = (*ptr)->next->next;
 
 	/* Assign the address of node to head */
-	(*head)->next = node;
+	(*ptr)->next = ptr_node;
 
 	/* Copy string to node->str member */
-	node->str = strdup(str);
-
+	ptr_node->str = strdup(str);
+	if (ptr_node->str != str)
+	{
+		free(ptr_node->str);
+		free(ptr_node);
+		return (NULL);
+	}
 	return (ptr_node);
 }
