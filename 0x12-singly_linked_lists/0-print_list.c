@@ -12,16 +12,16 @@
 size_t print_list(const list_t *h)
 {
 	size_t count = 0;
-	list_s *ptr = NULL;
+	list_t *ptr = NULL;
 
-	ptr = malloc(sizeof(list_s));
+	ptr = malloc(sizeof(list_t));
 
-	ptr = h;
-
-	if (h == NULL)
+	if (ptr == NULL)
 		return (0);
 
-	while ( ptr != NULL)
+	ptr->str = h->str;
+	ptr->len = h->len;
+	while (ptr != NULL)
 	{
 		count++;
 		if (ptr->str == NULL)
