@@ -20,7 +20,9 @@ size_t print_list(const list_t *h)
 	if (ptr == NULL || h == NULL)
 		return (0);
 
-	ptr = h;
+	ptr->len = h->len;
+	ptr->str = h->str;
+
 	while (ptr != NULL)
 	{
 		count++;
