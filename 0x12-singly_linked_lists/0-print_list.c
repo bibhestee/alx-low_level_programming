@@ -17,10 +17,15 @@ size_t print_list(const list_t *h)
 
 	ptr = malloc(sizeof(list_t));
 
-	if (ptr == NULL || h == NULL)
+	if (ptr == NULL)
 	{
 		printf("Error\n");
-		return (1);
+		return (0);
+	}
+	if (h == NULL)
+	{
+		printf("Error\n");
+		return (0);
 	}
 
 	ptr->len = h->len;
