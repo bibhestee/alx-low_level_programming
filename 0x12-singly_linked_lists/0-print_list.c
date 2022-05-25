@@ -18,10 +18,14 @@ size_t print_list(const list_t *h)
 	ptr = malloc(sizeof(list_t));
 
 	if (ptr == NULL || h == NULL)
-		return (0);
+	{
+		printf("Error\n");
+		return (1);
+	}
 
 	ptr->len = h->len;
 	ptr->str = h->str;
+	ptr->next = h->next;
 
 	while (ptr != NULL)
 	{
