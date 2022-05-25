@@ -6,8 +6,8 @@
  * list_len - a function that returns the number of elements
  * in a linked list_t list.
  * @h: a pointer to a constant list_t list.
- * Description: a pointer to a constant can't change the value
- * of the variable it is pointing to.
+ * Description: a pointer to a constant can only change the
+ * address of what its pointint to but not the value.
  *
  * Return: the total number of elements in a linked list.
  */
