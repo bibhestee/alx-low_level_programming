@@ -27,10 +27,10 @@ list_t *add_node(list_t **head, const char *str)
 	ptr_node = node;
 
 	/* Assign the address of initial first node to node */
-	ptr_node->next = (*ptr)->next->next;
+	ptr_node->next = (*ptr)->next;
 
 	/* Assign the address of node to head */
-	(*ptr)->next = ptr_node;
+	(*ptr) = ptr_node;
 
 	/* Copy string to node->str member */
 	ptr_node->str = strdup(str);
@@ -40,5 +40,5 @@ list_t *add_node(list_t **head, const char *str)
 		free(ptr_node);
 		return (NULL);
 	}
-	return (ptr_node);
+	return (*ptr);
 }

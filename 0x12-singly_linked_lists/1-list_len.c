@@ -31,6 +31,6 @@ size_t list_len(const list_t *h)
 		count++;
 		ptr = ptr->next;
 	}
-
+	free(ptr);
 	return (count);
 }
