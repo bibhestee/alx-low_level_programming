@@ -23,26 +23,21 @@ list_t *add_node(list_t **head, const char *str)
 	if (node == NULL)
 		return (NULL);
 
-	/* Get number of string */
-	while (str[len])
-	{
-		len++;
-	}
-
 	/* Assign the address of initial first node to node */
 	node->next = (*head);
 
 	/* Assign the address of node to head */
 	(*head) = node;
 
+	/* Get number of string */
+	while (str[len])
+	{
+		len++;
+	}
+
 	/* Copy string to node->str member and modify node->len */
 	node->len = len;
 	node->str = strdup(str);
-	if (node->str != str)
-	{
-		free(node->str);
-		free(node);
-		return (NULL);
-	}
+
 	return (*head);
 }
