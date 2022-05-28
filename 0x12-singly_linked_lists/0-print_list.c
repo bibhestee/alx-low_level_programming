@@ -19,8 +19,7 @@ size_t print_list(const list_t *h)
 
 	if (ptr == NULL || h == NULL)
 	{
-		printf("Error\n");
-		exit(0);
+		return (0);
 	}
 
 	ptr->len = h->len;
