@@ -12,41 +12,26 @@
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t **ptr = malloc(sizeof(list_t));
-	list_t *new_node = malloc(sizeof(list_t));
+	list_t *new_node = NULL;
+	unsigned int len = 0;
 
-	if (new_node == NULL || ptr == NULL)
+	new_node = malloc(sizeof(list_t));
+
+	if (new_node == NULL)
 		return (NULL);
 
-	ptr = head;
-	/* Assign str and next to new node */
+	/* Get number of string */
+	while (str[len])
+	{
+		len++;
+	}
+
+	/* Assign str, next to new node and len to node */
 	new_node->str = strdup(str);
+	new_node->len = len;
 	new_node->next = NULL;
 
-	/* Check if dup of str is success */
-	if (new_node->str == NULL)
-	{
-		free(ptr);
-		free(new_node);
-		return(NULL);
-	}
+	(*head) = new_node;
 
-	/* Check if ptr have a list */
-	if (ptr == NULL)
-	{
-		(*ptr)->next = new_node;
-	}
-	/* Traverse through the list and
-	 * assigning the new node add to last node
-	 */
-	else
-	{
-		while (ptr != NULL)
-		{
-			*ptr = (*ptr)->next;
-		}
-		(*ptr)->next = new_node;
-	}
-
-	return (new_node);
+	return (*head);
 }
