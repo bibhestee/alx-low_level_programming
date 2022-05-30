@@ -1,11 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
+#include <math.h>
 
 /**
  * binary_to_unit - function
+ * @b: binary number string
  *
- *
- *
+ * Return: The converted number or 0
  */
 
 unsigned int binary_to_unit(const char *b)
@@ -19,9 +20,9 @@ unsigned int binary_to_unit(const char *b)
 	}
 	len = i - 1;
 
-	for (j = 0; j < i ;j++)
+	for (j = 0; j < i ; j++)
 	{
-		weight = 2**len;
+		weight = 2 * exp(len);
 
 		if (b[j] == NULL)
 			return (0);
