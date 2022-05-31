@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * binary_to_unit - function
+ * binary_to_uint - function
  * @b: binary number string
  *
  * Return: The converted number or 0
@@ -44,13 +44,13 @@ unsigned int binary_to_uint(const char *b)
  * Return: outcome of the exp
  */
 
-int power(int x,int n)
+int power(int x, int n)
 {
-    int i; /* Variable used in loop counter */
-    int number = 1;
+	int i; /* Variable used in loop counter */
+	int number = 1;
 
-    for (i = 0; i < n; ++i)
-        number *= x;
+	for (i = 0; i < n; ++i)
+		number *= x;
 
-    return(number);
+	return (number);
 }
