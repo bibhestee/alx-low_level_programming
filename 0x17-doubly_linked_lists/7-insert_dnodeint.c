@@ -12,17 +12,12 @@
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	unsigned int count = 1;
+	unsigned int count = 0;
 	dlistint_t *node = malloc(sizeof(dlistint_t));
 	dlistint_t *ptr, *current;
 
 	current = *h;
 	ptr = *h;
-	/* Check if list is not empty */
-	if (*h == NULL)
-	{
-		return (NULL);
-	}
 	/* Check if memory is successfully allocated */
 	if (node == NULL)
 	{
@@ -32,11 +27,17 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	node->n = n;
 	node->prev = NULL;
 	node->next = NULL;
+	/* Check if list is not empty */
+	if (*h == NULL)
+	{
+		*h = node;
+		return (*h);
+	}
 	/* Traverse through the list */
 	while (current != NULL)
 	{
 		ptr = ptr->next;
-		if (count == idx)
+		if (count == idx - 1)
 		{
 			current->next = node;
 			node->prev = current;
