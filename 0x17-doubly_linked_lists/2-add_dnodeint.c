@@ -1,3 +1,4 @@
+
 #include "lists.h"
 #include <stdlib.h>
 
@@ -14,6 +15,10 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	dlistint_t *ptr = NULL;
 	dlistint_t *node = malloc(sizeof(dlistint_t));
 
+	if (node == NULL)
+	{
+		return (NULL);
+	}
 	ptr = *head;
 	node->n = n;
 	node->prev = NULL;
@@ -24,7 +29,8 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 		*head = node;
 		return (*head);
 	}
-	else {
+	else
+	{
 		node->next = ptr;
 		ptr->prev = node;
 		*head = node;
