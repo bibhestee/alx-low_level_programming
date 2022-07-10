@@ -12,12 +12,8 @@
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	unsigned int count = 1;
 	dlistint_t *node = malloc(sizeof(dlistint_t));
-	dlistint_t *ptr, *current;
 
-	current = *h;
-	ptr = *h;
 	/* Check if memory is successfully allocated */
 	if (node == NULL)
 	{
@@ -33,20 +29,48 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		*h = node;
 		return (*h);
 	}
-	/* Traverse through the list */
-	while (current != NULL)
+	/* Insert the node */
+	return (insert(&*h, idx, node));
+}
+
+/**
+ * insert - insert the node in the index position
+ * @h: pointer to the first node of the list
+ * @idx: index position
+ * @node: pointer to the new node
+ *
+ * Return: returns the pointer to the new node
+ */
+
+dlistint_t *insert(dlistint_t **h, unsigned int idx, dlistint_t *node)
+{
+	unsigned int count = 1;
+	dlistint_t *ptr = *h;
+	dlistint_t *current = *h;
+
+	if (idx == 0)
 	{
-		ptr = ptr->next;
-		if (count == idx)
-		{
-			current->next = node;
-			node->prev = current;
-			ptr->prev = node;
-			node->next = ptr;
-			return (node);
-		}
-		current = current->next;
-		count++;
+		node->next = current;
+		current->prev = node;
+		*h = node;
+		return (*h);
 	}
-	return (NULL);
+	else
+	{
+		while (current != NULL)
+		{
+			ptr = ptr->next;
+			if (count == idx)
+			{
+				current->next = node;
+				node->prev = current;
+				ptr->prev = node;
+				node->next = ptr;
+				return (node);
+			}
+			current = current->next;
+			count++;
+		}
+		return (NULL);
+	}
 }
