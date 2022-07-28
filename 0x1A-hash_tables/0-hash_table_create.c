@@ -16,7 +16,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *hash_table;
 
-	hash_table = calloc(size, sizeof(hash_table_t));
+	hash_table = malloc(sizeof(hash_table_t) * size);
 
 	/* Check if hash_table is successfully created */
 	if (hash_table == NULL)
