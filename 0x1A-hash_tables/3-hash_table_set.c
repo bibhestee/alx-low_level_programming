@@ -25,15 +25,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht[index].array == NULL)
 	{
 		ht[index].array = &new_key;
+		ht[index].size = index;
+		return (1);
 	}
 	else
 	{
-		hash_node_t **temp = ht[index].array;
-		new_key->next = *temp;
+		hash_node_t *temp = *(ht[index].array);
+		new_key->next = temp;
 		ht[index].array = &new_key;
+		ht[index].size = index;
 		return (0);
 	}
-	return (1);
 }
 
 
