@@ -9,9 +9,9 @@
  * Return: 1 if succeeded, 0 otherwise
  */
 
-int hash_table_set(hash_table_t *ht, const char *key, const char *value);
+int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	int index;
+	unsigned long int index;
 	unsigned long int size;
 
 	/* Create new key */
@@ -20,15 +20,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 	/* Generate index for the element */
 	size = ht->size;
 
-	index = key_index(key, size);
-
+	index = key_index((unsigned char *)key, size);
 	/* Set new key to index position on hash table */
-
-		/*---Check if hash table is ocuppied or not --*/
-	while (num != index)
+	if (ht[index].array == NULL)
 	{
-		ht++;
+		ht[index].array = &new_key;
 	}
+	else
+	{
+		hash_node_t **temp = ht[index].array;
+		new_key->next = *temp;
+		ht[index].array = &new_key;
+		return (0);
+	}
+	return (1);
 }
 
 
@@ -43,7 +48,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value);
 hash_node_t *create_key(const char *key, const char *value)
 {
 	hash_node_t *element;
-	const char *str = value;
+	char *ele = (char *)key;
+	char *str = (char *)value;
 
 	/* Create the new element */
 	element = malloc(sizeof(hash_node_t));
@@ -53,7 +59,7 @@ hash_node_t *create_key(const char *key, const char *value)
 		return (0);
 
 	/* Assign key and value to the new element */
-	element->key = key;
+	element->key = ele;
 	element->value = str;
 	element->next = NULL;
 

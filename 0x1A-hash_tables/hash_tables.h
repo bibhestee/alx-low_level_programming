@@ -2,7 +2,7 @@
 #define HASH_TABLES_H
 
 /*============ LIBRARIES =======================*/
-
+#include <stdio.h>
 #include <stdlib.h>
 
 /*============ STRUCTURES =======================*/

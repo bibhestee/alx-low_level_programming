@@ -23,6 +23,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	{
 		return (NULL);
 	}
-
+	hash_table->size = size;
+	printf("%lu\n", hash_table->size);
 	return (hash_table);
 }
