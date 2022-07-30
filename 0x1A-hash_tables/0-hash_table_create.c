@@ -18,13 +18,20 @@ hash_table_t *hash_table_create(unsigned long int size)
 	hash_node_t **table_array;
 
 	hash_table = malloc(sizeof(hash_table_t));
-	table_array = create_array(size);
-	/* Check if hash_table is successfully created */
+	/* Check if hash_table guild is successfully created */
 	if (hash_table == NULL)
 	{
-		free(table_array);
 		return (NULL);
 	}
+
+	/* Create new hash_table array and check if it's successful */
+	table_array = create_array(size);
+	if (table_array == NULL)
+	{
+		free(hash_table);
+		return (NULL);
+	}
+
 	/* Assign value to the hash table members */
 	hash_table->size = size;
 	hash_table->array = table_array;
