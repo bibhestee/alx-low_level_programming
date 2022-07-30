@@ -17,6 +17,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	/* Create new key */
 	hash_node_t *new_key = create_key(key, value);
+	if (new_key == NULL)
+	{
+		return (0);
+	}
 
 	/* Generate index for the element */
 	size = ht->size;
@@ -26,14 +30,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht_array[index] == NULL)
 	{
 		ht_array[index] = new_key;
-		return (1);
 	}
 	else
 	{
 		new_key->next = ht_array[index];
 		ht_array[index] = new_key;
-		return (0);
 	}
+	return (1);
 }
 
 
