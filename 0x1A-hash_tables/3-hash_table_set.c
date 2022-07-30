@@ -14,10 +14,10 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index;
-	unsigned long int size;
-	hash_node_t *new_key;
-	hash_node_t **ht_array;
+	unsigned long int index, size;
+	hash_node_t *new_key, **ht_array;
+	char *str;
+	const char *ch;
 
 	/* Check if hash table is valid */
 	if (ht == NULL)
@@ -36,16 +36,27 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/* Generate index for the element */
 	size = ht->size;
 	index = key_index((unsigned char *)key, size);
+	str = strdup(value);
 
 	/* Set new key to index position on hash table */
 	if (ht_array[index] == NULL)
 	{
 		ht_array[index] = new_key;
+		free(str);
 	}
 	else
 	{
+		ch = (const char *)ht_array[index]->key;
+		if (strcmp(ch, key) == 0)
+		{
+			 /* Update the value if key already exist*/
+                	ht_array[index]->value = str;
+			return (1);
+        	}
+
 		new_key->next = ht_array[index];
 		ht_array[index] = new_key;
+		free(str);
 	}
 	return (1);
 }
