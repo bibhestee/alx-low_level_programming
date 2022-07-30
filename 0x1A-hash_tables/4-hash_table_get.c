@@ -5,7 +5,7 @@
  * @ht: hash table
  * @key: The key
  * Description: The value of the specified key is retrieve
- *  from the hash table by accessing the index.
+ *  from the hash table by accessing the index where the key is stored.
  *
  * Return: The value or NULL
  */
