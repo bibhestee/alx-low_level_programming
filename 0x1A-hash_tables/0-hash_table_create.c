@@ -15,15 +15,50 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *hash_table;
+	hash_node_t **table_array;
 
-	hash_table = malloc(sizeof(hash_table_t) * size);
-
+	hash_table = malloc(sizeof(hash_table_t));
+	table_array = create_array(size);
 	/* Check if hash_table is successfully created */
 	if (hash_table == NULL)
 	{
+		free(table_array);
 		return (NULL);
 	}
+	/* Assign value to the hash table members */
 	hash_table->size = size;
-	printf("%lu\n", hash_table->size);
+	hash_table->array = table_array;
+
 	return (hash_table);
+}
+
+
+/**
+ * create_array - create a new hash table array
+ * @size: array size
+ * Description: Create an array of size specified and initialize
+ *   all element in the array to NULL
+ *
+ * Return: a pointer to the array created or NULL if not successful
+ */
+
+hash_node_t **create_array(unsigned long int size)
+{
+	hash_node_t **table_array = NULL;
+	unsigned long int i;
+
+	table_array = malloc(sizeof(hash_node_t) * size);
+
+	if (table_array == NULL)
+	{
+		return (NULL);
+	}
+
+	/* Initialize all element of array to NULL */
+	for (i = 0; i < size; i++)
+	{
+		table_array[i] = NULL;
+	}
+
+	return (table_array);
 }
