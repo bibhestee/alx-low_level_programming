@@ -20,8 +20,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	/* Generate index for the element */
 	size = ht->size;
-
 	index = key_index((unsigned char *)key, size);
+
 	/* Set new key to index position on hash table */
 	if (ht_array[index] == NULL)
 	{
