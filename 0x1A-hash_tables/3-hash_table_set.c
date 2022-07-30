@@ -32,12 +32,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		return (0);
 	}
-
 	/* Generate index for the element */
 	size = ht->size;
 	index = key_index((unsigned char *)key, size);
 	str = strdup(value);
-
 	/* Set new key to index position on hash table */
 	if (ht_array[index] == NULL)
 	{
@@ -48,12 +46,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		ch = (const char *)ht_array[index]->key;
 		if (strcmp(ch, key) == 0)
-		{
-			 /* Update the value if key already exist*/
-                	ht_array[index]->value = str;
+		{ /* Update the value if key already exist*/
+			ht_array[index]->value = str;
 			return (1);
-        	}
-
+		}
 		new_key->next = ht_array[index];
 		ht_array[index] = new_key;
 		free(str);
