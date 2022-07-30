@@ -17,13 +17,20 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	const char *ch;
 	hash_node_t *ptr;
 
+	/* Check if hash table is valid */
+	if (ht == NULL)
+	{
+		return (NULL);
+	}
+
 	size = ht->size;
-	index = key_index((unsigned char*)key, size);
+	index = key_index((unsigned char *)key, size);
 	ptr = ht->array[index];
 	if (ht->array[index] != NULL)
 	{
 		while (ptr != NULL)
 		{
+			/* find key */
 			ch = ptr->key;
 			if (strcmp(ch, key) == 0)
 			{
