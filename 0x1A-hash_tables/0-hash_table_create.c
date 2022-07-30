@@ -14,10 +14,9 @@
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *hash_table;
 	hash_node_t **table_array;
 
-	hash_table = malloc(sizeof(hash_table_t));
+	hash_table_t *hash_table = malloc(sizeof(hash_table_t));
 	/* Check if hash_table guild is successfully created */
 	if (hash_table == NULL)
 	{
@@ -51,10 +50,9 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 hash_node_t **create_array(unsigned long int size)
 {
-	hash_node_t **table_array = NULL;
 	unsigned long int i;
 
-	table_array = malloc(sizeof(hash_node_t) * size);
+	hash_node_t **table_array = malloc(sizeof(hash_node_t) * size);
 
 	if (table_array == NULL)
 	{
