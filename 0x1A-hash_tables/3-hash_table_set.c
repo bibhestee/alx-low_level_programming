@@ -5,6 +5,9 @@
  * @ht: hash table to be updated
  * @key: The key
  * @value: The key's value
+ * Description: A key and value is set to a particular
+ *  index on the HT, if collision, the element will be set
+ *  to the beginning of the list and the previous element to next.
  *
  * Return: 1 if succeeded, 0 otherwise
  */
@@ -13,10 +16,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
 	unsigned long int size;
-	hash_node_t **ht_array = ht->array;
+	hash_node_t *new_key;
+	hash_node_t **ht_array;
 
+	/* Check if hash table is valid */
+	if (ht == NULL)
+	{
+		return (0);
+	}
+
+	ht_array = ht->array;
 	/* Create new key */
-	hash_node_t *new_key = create_key(key, value);
+	new_key = create_key(key, value);
 	if (new_key == NULL)
 	{
 		return (0);
@@ -44,7 +55,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  * create_key - create a new key with value
  * @key: The key
  * @value: The key's value
- *
+ * Description: Create a new key with the value assign from a duplicate
+ *  then return the created key/value
  * Return: a pointer to the key if successful or NULL if not
  */
 
@@ -59,7 +71,9 @@ hash_node_t *create_key(const char *key, const char *value)
 
 	/* Check if element is created successfully */
 	if (element == NULL)
-		return (0);
+	{
+		return (NULL);
+	}
 
 	/* Assign key and value to the new element */
 	element->key = ele;
