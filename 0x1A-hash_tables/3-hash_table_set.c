@@ -13,6 +13,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
 	unsigned long int size;
+	hash_node_t **ht_array = ht->array;
 
 	/* Create new key */
 	hash_node_t *new_key = create_key(key, value);
@@ -22,18 +23,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	index = key_index((unsigned char *)key, size);
 	/* Set new key to index position on hash table */
-	if (ht[index].array == NULL)
+	if (ht_array[index] == NULL)
 	{
-		ht[index].array = &new_key;
-		ht[index].size = index;
+		ht_array[index] = new_key;
 		return (1);
 	}
 	else
 	{
-		hash_node_t *temp = *(ht[index].array);
-		new_key->next = temp;
-		ht[index].array = &new_key;
-		ht[index].size = index;
+		new_key->next = ht_array[index];
+		ht_array[index] = new_key;
 		return (0);
 	}
 }
@@ -50,8 +48,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 hash_node_t *create_key(const char *key, const char *value)
 {
 	hash_node_t *element;
-	char *ele = (char *)key;
-	char *str = (char *)value;
+	char *ele = strdup(key);
+	char *str = strdup(value);
 
 	/* Create the new element */
 	element = malloc(sizeof(hash_node_t));
