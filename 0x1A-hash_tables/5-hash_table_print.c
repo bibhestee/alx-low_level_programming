@@ -1,33 +1,43 @@
 #include "hash_tables.h"
 
 /**
+ * hash_table_print - print the hash table content
+ * @ht: The hash table
+ * Description: Print out each content of the table
+ *  and also navigate to check collisions and print it
  *
- *
- *
- *
+ * Return: Nothing
  */
 
 void hash_table_print(const hash_table_t *ht)
 {
-	hash_table_t *current;
+	hash_node_t *current;
 	hash_node_t *temp;
-	unsigned long int i, size;
+	unsigned long int i, size, first = 1;
 
 	/* Check if ht is valid */
 	if (ht != NULL)
 	{
 		size = ht->size;
-		current = (hash_table_t *)ht;
 		printf("{");
 		for (i = 0; i < size; i++)
 		{
-			if (current->array[i] != NULL)
+			current = ht->array[i];
+			if (current != NULL)
 			{
-				printf("'%s':", current->array[i]->key);
-				printf(" '%s'", current->array[i]->value);
-				if (current->array[i]->next != NULL)
+				if (first)
 				{
-					temp = current->array[i]->next;
+					printf("'%s': '%s'", current->key, current->value);
+					first = 0;
+				}
+				else
+				{
+					printf(", '%s': '%s'", current->key, current->value);
+				}
+				/* Print collisions */
+				if (current->next != NULL)
+				{
+					temp = current->next;
 					while (temp != NULL)
 					{
 						printf(", '%s': '%s'", temp->key, temp->value);
