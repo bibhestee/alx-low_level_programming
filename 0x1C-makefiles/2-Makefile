@@ -17,7 +17,7 @@ SRC = main.c school.c
 OBJ = main.o school.o
 NAME = school
 
-all: $(OBJ)
+all: main.o school.o
 	$(CC) $(OBJ) -o $(NAME)
 main.o: main.c
 	$(CC) -c -o main.c main.o
