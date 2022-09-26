@@ -15,7 +15,8 @@ char *str_concat(char *s1, char *s2)
 
 	if (!s1 && !s2)
 	{
-		return (NULL);
+		s = (char *)malloc(sizeof(char) * 1);
+		return (s);
 	}
 	else if (!s1 && s2)
 	{
