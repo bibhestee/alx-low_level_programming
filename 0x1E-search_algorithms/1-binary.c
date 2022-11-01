@@ -10,7 +10,7 @@
  * @value: the value to search for.
  *
  * Return: return the first index where
- * 	value is located.
+ *	value is located.
  */
 
 int binary_search(int *array, size_t size, int value)
@@ -37,7 +37,7 @@ int binary_search(int *array, size_t size, int value)
 
 int binary(int *array, size_t lo, size_t hi, int value)
 {
-	size_t mid = (hi + lo)/ 2;
+	size_t mid = (hi + lo) / 2;
 
 	if (!array)
 		return (-1);
