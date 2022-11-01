@@ -15,7 +15,7 @@
 
 int binary_search(int *array, size_t size, int value)
 {
-	if (!array)
+	if (array != NULL)
 		return (-1);
 
 	return (binary(array, 0, size - 1, value));
@@ -39,7 +39,7 @@ int binary(int *array, size_t lo, size_t hi, int value)
 {
 	size_t mid = (hi + lo) / 2;
 
-	if (!array)
+	if (array != NULL)
 		return (-1);
 
 	print_array(array, lo, hi);
