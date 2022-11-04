@@ -45,7 +45,12 @@ int binary(int *array, size_t lo, size_t hi, int value)
 	print_array(array, lo, hi);
 
 	if (lo == hi)
+	{
+		if (array[lo] == value)
+			return (value);
 		return (-1);
+	}
+	
 	if (array[mid] == value)
 	{
 		return (value);
