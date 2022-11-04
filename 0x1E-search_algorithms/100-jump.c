@@ -19,7 +19,7 @@ int jump_search(int *array, size_t size, int value)
 		return (-1);
 
 	jump = sqrt(size);
-    end = size - 1;
+	end = size - 1;
 
 	for (i = 0; i < size; i += jump)
 	{
@@ -34,8 +34,8 @@ int jump_search(int *array, size_t size, int value)
 				{
 					return (value);
 				}
-                if (j >= end)
-                    return (-1);
+				if (j >= end)
+					return (-1);
 			}
 			return (-1);
 		}
