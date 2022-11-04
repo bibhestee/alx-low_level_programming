@@ -50,7 +50,7 @@ int binary(int *array, size_t lo, size_t hi, int value)
 			return (value);
 		return (-1);
 	}
-	
+
 	if (array[mid] == value)
 	{
 		return (value);
